@@ -1,0 +1,29 @@
+{
+  "name": "crypto-order-book-api",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "repository": "https://github.com/TonyBaasanjav/CryptoOrderBook.git",
+  "author": "Tony Baasanjav <tonybaasanjav@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "start": "node build/index.js",
+    "build": "(if exist build rmdir /S /Q build) && tsc",
+    "dev": "nodemon --watch src/**/* -e ts,json --exec node --inspect-brk -r ts-node/register src/index.ts"
+  },
+  "dependencies": {
+    "@types/express": "^4.16.1",
+    "@types/node": "^16.9.1",
+    "axios": "^0.21.4",
+    "dotenv": "^10.0.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.3.0",
+    "typedi": "^0.10.0"
+  },
+  "devDependencies": {
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.10"
+  }
+}
